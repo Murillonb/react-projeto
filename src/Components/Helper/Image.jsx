@@ -5,12 +5,9 @@ const Image = ({ alt, ...props }) => {
   const [skeleton, setSkeleton] = React.useState(true);
 
   function handleLoad({ target }) {
-    console.log(skeleton);
-
     setSkeleton(false);
     target.style.opacity = 1;
   }
-  console.log(skeleton);
 
   return (
     <div className={styles.wrapper}>
