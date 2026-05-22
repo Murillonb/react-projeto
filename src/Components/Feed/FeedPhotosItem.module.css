@@ -17,7 +17,7 @@ grid-row: span 2;
   cursor: pointer;
 }
 
-.photo img {
+.photo > div {
   grid-area: 1 / 1;
 }
 .views {
