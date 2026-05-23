@@ -8,6 +8,7 @@ import styles from './FeedPhotos.module.css';
 
 const FeedPhotos = ({ page, user, setModalPhoto, setInfinite }) => {
   const { data, error, loading, request } = useFetch();
+  const [finish, setFinish] = React.useState(false);
 
   React.useEffect(() => {
     async function fetchPhotos() {
@@ -16,6 +17,7 @@ const FeedPhotos = ({ page, user, setModalPhoto, setInfinite }) => {
       const { response, json } = await request(url, options);
       if (response && response.ok && json.length < total) {
         setInfinite(false);
+        setFinish(true);
       }
     }
     fetchPhotos();
@@ -25,16 +27,18 @@ const FeedPhotos = ({ page, user, setModalPhoto, setInfinite }) => {
   if (loading) return <Loading />;
   if (data) {
     return (
-      <ul className={`${styles.feed} animeLeft`}>
-        {data.map((photo) => (
-          <FeedPhotosItem
-            key={photo.id}
-            photo={photo}
-            setModalPhoto={setModalPhoto}
-          />
-        ))}
-        <FeedPhotosItem />
-      </ul>
+      <>
+        <ul className={`${styles.feed} animeLeft`}>
+          {data.map((photo) => (
+            <FeedPhotosItem
+              key={photo.id}
+              photo={photo}
+              setModalPhoto={setModalPhoto}
+            />
+          ))}
+        </ul>
+        {finish && <p className={styles.msg}>No more posts.</p>}
+      </>
     );
   } else return null;
 };

@@ -6,6 +6,13 @@
   justify-items: center;
 }
 
+.msg {
+  display: block;
+  text-align: center;
+  color: #333;
+  font-size: .725rem;
+}
+
 @media (max-width: 40rem) {
   .feed {
     grid-template-columns: repeat(2, 1fr);

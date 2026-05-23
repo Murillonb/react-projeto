@@ -22,7 +22,6 @@ const Feed = ({ user }) => {
         }
       }
     }
-
     window.addEventListener('wheel', infiniteScroll);
     window.addEventListener('scroll', infiniteScroll);
 
