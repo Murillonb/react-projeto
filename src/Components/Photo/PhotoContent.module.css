@@ -49,6 +49,9 @@
     overflow-y: auto;
     grid-template-columns: minmax(20rem, 40rem);
   }
+  .single.photo {
+    max-height: 100%;
+  }
   .img {
     grid-row: 1;
   }
