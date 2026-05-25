@@ -1,5 +1,5 @@
 import React from 'react';
-import Enviar from '../../Assets/enviar.svg?react';
+import Send from '../../Assets/enviar.svg?react';
 import useFetch from '../../Hooks/useFetch';
 import Error from '../Helper/Error';
 import { COMMENT_POST } from '../../api';
@@ -34,7 +34,7 @@ const PhotoCommentsForm = ({ id, setComments, single }) => {
         onChange={({ target }) => setComment(target.value)}
       />
       <button className={styles.button}>
-        <Enviar />
+        <Send />
       </button>
       {error && <Error error={error} />}
     </form>

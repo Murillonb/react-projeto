@@ -10,7 +10,8 @@
   display: block;
   text-align: center;
   color: #333;
-  font-size: .725rem;
+  font-size: 1.125;
+  margin: 2rem;
 }
 
 @media (max-width: 40rem) {
