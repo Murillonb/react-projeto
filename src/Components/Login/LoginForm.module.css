@@ -17,11 +17,12 @@
   display: block;
 }
 
-.cadastro {
+.register {
   margin-top: 4rem;
+  margin-bottom: 4rem;
 }
 
-.cadastro p {
+.register p {
   margin-top: 2rem;
   margin-bottom: 2rem;
 }

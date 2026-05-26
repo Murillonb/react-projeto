@@ -1,0 +1,21 @@
+.feed {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+  justify-items: center;
+}
+
+.msg {
+  display: block;
+  text-align: center;
+  color: #333;
+  font-size: 1.125;
+  margin: 2rem;
+}
+
+@media (max-width: 40rem) {
+  .feed {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -6,6 +6,7 @@ import useForm from '../../Hooks/useForm';
 import { USER_POST } from '../../api';
 import { UserContext } from '../../UserContext';
 import useFetch from '../../Hooks/useFetch';
+import Head from '../Helper/Head';
 
 const LoginCreate = () => {
   const username = useForm();
@@ -28,15 +29,16 @@ const LoginCreate = () => {
 
   return (
     <section className="animeLeft">
-      <h1 className="title">Cadastre-se</h1>
+      <Head title="Register" />
+      <h1 className="title">Register</h1>
       <form onSubmit={handleSubmit}>
-        <Input label="Usuário" type="text" name="username" {...username} />
+        <Input label="User" type="text" name="username" {...username} />
         <Input label="Email" type="email" name="email" {...email} />
-        <Input label="Senha" type="password" name="password" {...password} />
+        <Input label="Password" type="password" name="password" {...password} />
         {loading ? (
-          <Button disabled>Cadastrando...</Button>
+          <Button disabled>Registering...</Button>
         ) : (
-          <Button>Cadastrar</Button>
+          <Button>Register</Button>
         )}
         <Error error={error} />
       </form>

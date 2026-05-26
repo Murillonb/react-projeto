@@ -8,6 +8,7 @@ import { UserContext } from '../../UserContext';
 import Error from '../Helper/Error';
 import styles from './LoginForm.module.css';
 import stylesBtn from '../Forms/Button.module.css';
+import Head from '../Helper/Head';
 
 const LoginForm = () => {
   const username = useForm();
@@ -25,25 +26,26 @@ const LoginForm = () => {
 
   return (
     <section className="animeLeft">
+      <Head title="Login" />
       <h1 className="title">Login</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <Input label="Usuário" type="text" name="username" {...username} />
-        <Input label="Senha" type="password" name="password" {...password} />
+        <Input label="User" type="text" name="username" {...username} />
+        <Input label="Password" type="password" name="password" {...password} />
         {loading ? (
-          <Button disabled>Carregando...</Button>
+          <Button disabled>Loading...</Button>
         ) : (
-          <Button>Entrar</Button>
+          <Button>Enter</Button>
         )}
-        <Error error={error} />
+        <Error error={error && 'Dados incorretos.'} />
       </form>
-      <Link className={styles.redefinir} to="/login/redefinir">
-        Esqueceu sua senha?
+      <Link className={styles.redefinir} to="/login/lost">
+        Forgot your password?
       </Link>
-      <div className={styles.cadastro}>
-        <h2 className={styles.subtitle}>Cadastre-se</h2>
-        <p>Ainda não possui conta? Cadastre-se no site.</p>
+      <div className={styles.register}>
+        <h2 className={styles.subtitle}>Register</h2>
+        <p>Don't have an account yet? Sign up on the website.</p>
         <Link className={stylesBtn.button} to="/login/create">
-          Cadastro
+          Register
         </Link>
       </div>
     </section>

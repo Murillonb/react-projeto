@@ -14,12 +14,12 @@ const Header = () => {
           <Dog />
         </Link>
         {data ? (
-          <Link className={styles.login} to="./conta">
+          <Link className={styles.login} to="./account">
             {data.nome}
           </Link>
         ) : (
           <Link className={styles.login} to="/login">
-            Login / Criar
+            Login / Register
           </Link>
         )}
       </nav>
